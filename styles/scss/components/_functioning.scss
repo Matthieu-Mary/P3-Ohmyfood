@@ -10,23 +10,35 @@
     .functioning-cards-container { 
 
         ul {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            height: 32vh;
             
             li {
                 width: 90%;
                 display: inline-flex;
 
+
                 button {
-                    margin-top: 1.5rem;
+                    display: flex;
+                    align-items: center;
                     padding: 1.75rem;
                     width: 100%;
+                    font-size: 1rem;
+                    font-weight: 700;
                     border: none;
                     border-radius: 20px;
                     background-color: var(--grey-2);
+                    box-shadow: var(--box-shadow);
+
+                    i {
+                        font-size: 1.2rem;
+                        color: var(--grey-3);
+                        margin-right: 1.2rem;
+                    }
                 }
             }
         }
