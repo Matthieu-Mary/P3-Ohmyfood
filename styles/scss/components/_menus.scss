@@ -7,6 +7,17 @@
     background-color: var(--grey-2);
     border-radius: 40px 40px 0 0;
 
+    h3 {
+        font-weight: 400;
+        padding: 0.2rem;
+    }
+
+    .green-border {
+        width: 50px;
+        height: 3px;
+        background-color: var(--tertiary-1);
+    }
+
     .menu-title-content {
         position: relative;
         width: 90%;
@@ -39,4 +50,31 @@
             }
         }
     }
+
+    .entries, .dishes, .desserts {
+        width: 90%;
+        margin: 0 auto;
+
+        .card {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            margin-top: 1rem;
+
+            h4 {
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+            }
+        }
+
+        .entries-card-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+    }
+
 } 
