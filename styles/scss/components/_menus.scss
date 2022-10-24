@@ -1,0 +1,42 @@
+.menu-container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey-2);
+    border-radius: 40px 40px 0 0;
+
+    .menu-title-content {
+        position: relative;
+        width: 90%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-title);
+        padding: 2.5rem 1rem;
+
+        i {
+            position: absolute;
+            font-size: 1.5rem;
+            right: 1%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .first-heart {
+            opacity: 1;
+            &:hover {
+                opacity: 0;
+            }
+        }
+        .second-heart {
+            opacity: 0;
+            color: var(--secondary-1);
+            transition: opacity 250ms ease-in, transform 250ms ease-in;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.25);
+            }
+        }
+    }
+} 

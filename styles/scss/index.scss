@@ -1,7 +1,9 @@
 @import "./utils/variables";
 @import "./utils/reset";
 @import "./utils/bases";
-@import './components/header';
+@import './components/headerHome';
+@import './components/headerMenu';
 @import "./components/functioning";
 @import "./components/restaurants";
-@import "./components/footer"
+@import "./components/footer";
+@import "./components/menus"

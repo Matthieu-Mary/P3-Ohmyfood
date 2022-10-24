@@ -1,0 +1,32 @@
+header {
+    
+
+    .header-links-container {
+        position: relative;
+
+        .arrow-link {
+            margin: auto 0;
+            position: absolute;
+            font-size: 1.5rem;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .header-image-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        height: 30vh;
+
+
+        img {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: visible;
+        }
+    }
+}
