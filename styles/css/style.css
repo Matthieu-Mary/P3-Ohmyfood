@@ -144,9 +144,30 @@ header .header-reservation button:hover {
   margin-right: 1.2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .functioning h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .functioning h2 {
+    font-size: 2rem;
+  }
+  .functioning .functioning-cards-container ul {
+    margin-top: 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+  }
+  .functioning .functioning-cards-container ul li {
+    width: 31%;
+    height: auto;
+  }
+}
 .restaurants {
   width: 100%;
-  margin: 6rem auto 0;
+  margin: 5rem auto 0;
   padding: 0 0 4rem;
   display: flex;
   flex-direction: column;
@@ -160,6 +181,7 @@ header .header-reservation button:hover {
 }
 .restaurants .card-menu {
   width: 90%;
+  height: 30vh;
   margin: 0 auto;
   margin-top: 1.5rem;
   border-radius: 20px;
@@ -184,7 +206,7 @@ header .header-reservation button:hover {
 }
 .restaurants .card-menu .container-img {
   width: 100%;
-  height: 20vh;
+  height: 70%;
   border-radius: 20px 20px 0 0;
 }
 .restaurants .card-menu .container-img img {
@@ -195,7 +217,7 @@ header .header-reservation button:hover {
 }
 .restaurants .card-menu .container-infos {
   width: 100%;
-  height: 8vh;
+  height: 30%;
   padding: 1rem;
   border-radius: 0 0 20px 20px;
   background-color: white;
@@ -211,17 +233,43 @@ header .header-reservation button:hover {
   font-size: 1.5rem;
   right: 6%;
   bottom: 10%;
-  z-index: 1;
 }
-.restaurants i:hover {
+.restaurants .first-heart {
+  opacity: 1;
+}
+.restaurants .first-heart:hover {
   opacity: 0;
-  transform: opacity 1s ease-in;
 }
-.restaurants i:before {
-  z-index: 0;
-  content: "1";
+.restaurants .second-heart {
+  opacity: 0;
+  color: var(--secondary-1);
+  transition: opacity 250ms ease-in, transform 250ms ease-in;
+}
+.restaurants .second-heart:hover {
+  opacity: 1;
+  transform: scale(1.25);
 }
 
+@media screen and (min-width: 992px) {
+  .restaurants {
+    align-items: center;
+  }
+  .restaurants .container-cards {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .restaurants h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .restaurants .card-menu {
+    width: 45%;
+  }
+}
 footer {
   color: white;
   background-color: var(--dark-1);
