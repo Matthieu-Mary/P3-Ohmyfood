@@ -1,5 +1,4 @@
 .menu-container {
-    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -19,62 +18,156 @@
     }
 
     .menu-title-content {
+        background-color: var(--grey-2);
         position: relative;
-        width: 90%;
+        width: 100%;
+        border-radius: 35px 35px 0 0;
         height: auto;
         display: flex;
         align-items: center;
         font-family: var(--font-title);
-        padding: 2.5rem 1rem;
+        padding: 2rem 1rem 1rem;
 
         i {
             position: absolute;
             font-size: 1.5rem;
-            right: 1%;
+            padding: inherit;
+            right: 0%;
             top: 50%;
             transform: translateY(-50%);
+            cursor: pointer;
         }
         .first-heart {
             opacity: 1;
+            transition: opacity 200ms linear;
             &:hover {
                 opacity: 0;
             }
         }
         .second-heart {
             opacity: 0;
-            color: var(--secondary-1);
-            transition: opacity 250ms ease-in, transform 250ms ease-in;
+            color: var(--primary-1);
+            transition: opacity 400ms linear;
             &:hover {
                 opacity: 1;
-                transform: scale(1.25);
             }
         }
     }
 
+
+
     .entries, .dishes, .desserts {
         width: 90%;
-        margin: 0 auto;
-
+        margin: 2rem auto 0;
+        
         .card {
+            position: relative;
             padding: 1rem;
             background-color: white;
             border-radius: 20px;
             box-shadow: var(--box-shadow);
             margin-top: 1rem;
+            cursor: pointer;
 
             h4 {
                 font-size: 1.2rem;
-                padding: 0.5rem 0;
+                padding: 0 0 0.5rem;
             }
+
+            .card-content {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                strong {
+                    margin-right: 0.5rem;
+                }
+            }
+
+            // .animate-check {
+            //     display: none;
+            //     position: absolute;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     width: 16%;
+            //     height: 100%;
+            //     background-color: var(--tertiary-1);
+            //     right: 0;
+            //     top: 0;
+            //     border-radius: 0 20px 20px 0;
+
+            //     .container-check-icon {
+            //         display: flex;
+            //         justify-content: center;
+            //         align-items: center;
+            //         width: 25px;
+            //         height: 25px;
+            //         background-color: white;
+            //         border-radius: 50%;
+
+            //         i {
+            //             font-size: 1.1rem;
+            //             font-weight: bold;
+            //             color: var(--tertiary-1);
+            //         }
+            //     }
+            // }
         }
 
-        .entries-card-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+    }
 
+    button {
+        margin: 2.5rem auto;
+        background: var(--linear-gradient);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 1rem 2rem;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
         }
     }
 
 } 
+
+@media screen and (min-width: 768px) {
+
+    .menu-container {
+        .menu-title-content {
+            padding: 2rem 2rem 1rem;
+        }
+
+        .container-menu-sections {
+            display: flex;
+            justify-content: space-between;
+    
+    
+            .entries, .dishes, .desserts {
+                width: 31%;
+    
+                .card {
+                    
+                    h4 {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+    
+        }
+    }
+    
+
+}

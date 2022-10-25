@@ -1,0 +1,50 @@
+.card {
+        
+    .animate-check {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0%;
+        height: 100%;
+        background-color: var(--tertiary-1);
+        right: 0;
+        top: 0;
+        border-radius: 0 20px 20px 0;
+    
+        .container-check-icon { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            border-radius: 50%;
+            
+            i {
+                color: transparent;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+        }
+    }
+    &:hover {
+        strong {
+            margin-right: 4rem;    
+        }
+        .animate-check {
+            width: 17%;
+            transition: width 0.25s linear;
+        
+            .container-check-icon { 
+                background-color: white;
+                
+                i {
+                    color: var(--tertiary-1);
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
