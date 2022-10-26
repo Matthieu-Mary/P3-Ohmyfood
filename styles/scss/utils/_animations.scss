@@ -1,3 +1,21 @@
+@keyframes translateCheckIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 5rem;
+    }
+}
+
+@keyframes translateCheckOut {
+    from {
+        width: 5rem;
+    }
+    to {
+        width: 0;
+    }
+}
+
 @keyframes rotateCheckIn {
     from {
         transform: rotate(0deg);
@@ -6,3 +24,20 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes delayMenus {
+    from {
+        margin-top: 3rem;
+    }
+    to {
+        opacity: 1;
+        margin-bottom: 0rem;
+    }
+}
+
+
+    // @for $i from 1 through 10 {
+    //   &:nth-of-type(#{$i}) {
+    //     @include transition(0.5s linear (0.5s + ($i - 1) * 0.1s));
+    //   }
+    // }

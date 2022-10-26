@@ -56,9 +56,11 @@
 
     .entries, .dishes, .desserts {
         width: 90%;
-        margin: 2rem auto 0;
+        margin: 2rem auto 0;     
         
         .card {
+            opacity: 1;
+            overflow: hidden;
             height: 80px;
             width: 100%;
             display: flex;
@@ -71,10 +73,19 @@
             margin-top: 1rem;
             cursor: pointer;
             
+    
+            // @for $i from 2 through 7 {
+            //     &:nth-of-type(#{$i}) {
+            //         animation: delayMenus 2s infinite;
+            //         animation-delay: $i * 0.5s;
+            //     }
+            //   }
+
             .card-content {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
                 
                 h4 {
                     font-size: 1.2rem;
@@ -102,10 +113,11 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100%;
+                height: 80px;
                 width: 0;
                 background-color: var(--tertiary-1);
                 border-radius: 0 20px 20px 0;
+                animation: translateCheckOut 0.2s ease-in;
             
                 .container-check-icon { 
                     display: flex;
@@ -115,7 +127,6 @@
                     height: 25px;
                     background-color: transparent;
                     border-radius: 50%;
-                    animation: rotateCheckOut 0.2s linear;
                     
                     i {
                         color: transparent;
@@ -128,11 +139,12 @@
                 .animate-check {
                     height: 80px;
                     width: 5rem;
-                    transition: width 0.2s ease-in-out;
+                    animation: translateCheckIn 0.2s ease-in-out;
                 
                     .container-check-icon { 
                         background-color: white;
                         animation: rotateCheckIn 0.2s linear;
+                       
                         
                         i {
                             color: var(--tertiary-1);

@@ -398,6 +398,8 @@ footer ul li i {
   margin: 2rem auto 0;
 }
 .menu-container .entries .card, .menu-container .dishes .card, .menu-container .desserts .card {
+  opacity: 1;
+  overflow: hidden;
   height: 80px;
   width: 100%;
   display: flex;
@@ -414,6 +416,7 @@ footer ul li i {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .menu-container .entries .card .card-content h4, .menu-container .dishes .card .card-content h4, .menu-container .desserts .card .card-content h4 {
   font-size: 1.2rem;
@@ -438,10 +441,11 @@ footer ul li i {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 80px;
   width: 0;
   background-color: var(--tertiary-1);
   border-radius: 0 20px 20px 0;
+  animation: translateCheckOut 0.2s ease-in;
 }
 .menu-container .entries .card .animate-check .container-check-icon, .menu-container .dishes .card .animate-check .container-check-icon, .menu-container .desserts .card .animate-check .container-check-icon {
   display: flex;
@@ -451,7 +455,6 @@ footer ul li i {
   height: 25px;
   background-color: transparent;
   border-radius: 50%;
-  animation: rotateCheckOut 0.2s linear;
 }
 .menu-container .entries .card .animate-check .container-check-icon i, .menu-container .dishes .card .animate-check .container-check-icon i, .menu-container .desserts .card .animate-check .container-check-icon i {
   color: transparent;
@@ -461,7 +464,7 @@ footer ul li i {
 .menu-container .entries .card:hover .animate-check, .menu-container .dishes .card:hover .animate-check, .menu-container .desserts .card:hover .animate-check {
   height: 80px;
   width: 5rem;
-  transition: width 0.2s ease-in-out;
+  animation: translateCheckIn 0.2s ease-in-out;
 }
 .menu-container .entries .card:hover .animate-check .container-check-icon, .menu-container .dishes .card:hover .animate-check .container-check-icon, .menu-container .desserts .card:hover .animate-check .container-check-icon {
   background-color: white;
@@ -500,12 +503,37 @@ footer ul li i {
     width: 31%;
   }
 }
+@keyframes translateCheckIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5rem;
+  }
+}
+@keyframes translateCheckOut {
+  from {
+    width: 5rem;
+  }
+  to {
+    width: 0;
+  }
+}
 @keyframes rotateCheckIn {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes delayMenus {
+  from {
+    margin-top: 3rem;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0rem;
   }
 }
 
