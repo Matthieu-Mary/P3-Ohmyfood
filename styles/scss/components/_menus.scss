@@ -5,18 +5,7 @@
     flex-direction: column;
     background-color: var(--grey-2);
     border-radius: 40px 40px 0 0;
-
-    h3 {
-        font-weight: 400;
-        padding: 0.2rem;
-    }
-
-    .green-border {
-        width: 50px;
-        height: 3px;
-        background-color: var(--tertiary-1);
-    }
-
+    
     .menu-title-content {
         background-color: var(--grey-2);
         position: relative;
@@ -54,7 +43,16 @@
         }
     }
 
+    h3 {
+        font-weight: 400;
+        padding: 0.2rem;
+    }
 
+    .green-border {
+        width: 50px;
+        height: 3px;
+        background-color: var(--tertiary-1);
+    }
 
     .entries, .dishes, .desserts {
         width: 90%;
@@ -62,6 +60,7 @@
         
         .card {
             height: 80px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -80,7 +79,11 @@
                 h4 {
                     font-size: 1.2rem;
                     padding: 0 0 0.5rem;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
+
                 .card-infos {
                     display: inline-flex;
                     justify-content: space-between;
@@ -95,41 +98,56 @@
                     }
                 }
             }
-
-            // .animate-check {
-            //     display: none;
-            //     position: absolute;
-            //     display: flex;
-            //     justify-content: center;
-            //     align-items: center;
-            //     width: 16%;
-            //     height: 100%;
-            //     background-color: var(--tertiary-1);
-            //     right: 0;
-            //     top: 0;
-            //     border-radius: 0 20px 20px 0;
-
-            //     .container-check-icon {
-            //         display: flex;
-            //         justify-content: center;
-            //         align-items: center;
-            //         width: 25px;
-            //         height: 25px;
-            //         background-color: white;
-            //         border-radius: 50%;
-
-            //         i {
-            //             font-size: 1.1rem;
-            //             font-weight: bold;
-            //             color: var(--tertiary-1);
-            //         }
-            //     }
-            // }
+            .animate-check {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 0;
+                background-color: var(--tertiary-1);
+                border-radius: 0 20px 20px 0;
+            
+                .container-check-icon { 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25px;
+                    height: 25px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    animation: rotateCheckOut 0.2s linear;
+                    
+                    i {
+                        color: transparent;
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &:hover {
+                .animate-check {
+                    height: 80px;
+                    width: 5rem;
+                    transition: width 0.2s ease-in-out;
+                
+                    .container-check-icon { 
+                        background-color: white;
+                        animation: rotateCheckIn 0.2s linear;
+                        
+                        i {
+                            color: var(--tertiary-1);
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
         }
 
     }
 
-    button {
+    .command-btn {
         margin: 2.5rem auto;
         background: var(--linear-gradient);
         color: white;
@@ -145,7 +163,6 @@
         }
     }
 
-} 
 
 @media screen and (min-width: 768px) {
 
@@ -161,17 +178,7 @@
     
             .entries, .dishes, .desserts {
                 width: 31%;
-    
-                .card {
-                    
-                    h4 {
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                    }
-                }
-            }
-    
+            }   
         }
     }
     

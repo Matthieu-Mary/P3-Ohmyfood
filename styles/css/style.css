@@ -127,16 +127,16 @@ header .header-image-container img {
   width: 90%;
   display: inline-flex;
 }
-.functioning .functioning-cards-container ul li:nth-child(1) button:before {
+.functioning .functioning-cards-container ul li:nth-child(1) .functioning-btn:before {
   content: "1";
 }
-.functioning .functioning-cards-container ul li:nth-child(2) button:before {
+.functioning .functioning-cards-container ul li:nth-child(2) .functioning-btn:before {
   content: "2";
 }
-.functioning .functioning-cards-container ul li:nth-child(3) button:before {
+.functioning .functioning-cards-container ul li:nth-child(3) .functioning-btn:before {
   content: "3";
 }
-.functioning .functioning-cards-container ul li button {
+.functioning .functioning-cards-container ul li .functioning-btn {
   position: relative;
   display: flex;
   align-items: center;
@@ -150,13 +150,13 @@ header .header-image-container img {
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
-.functioning .functioning-cards-container ul li button:hover {
+.functioning .functioning-cards-container ul li .functioning-btn:hover {
   background-color: var(--primary-2);
 }
-.functioning .functioning-cards-container ul li button:hover i {
+.functioning .functioning-cards-container ul li .functioning-btn:hover i {
   color: var(--primary-1);
 }
-.functioning .functioning-cards-container ul li button:before {
+.functioning .functioning-cards-container ul li .functioning-btn:before {
   position: absolute;
   left: -1.5rem;
   display: flex;
@@ -168,7 +168,7 @@ header .header-image-container img {
   height: 2rem;
   border-radius: 50%;
 }
-.functioning .functioning-cards-container ul li button i {
+.functioning .functioning-cards-container ul li .functioning-btn i {
   font-size: 1.2rem;
   color: var(--grey-3);
   margin-right: 1.2rem;
@@ -349,15 +349,6 @@ footer ul li i {
   background-color: var(--grey-2);
   border-radius: 40px 40px 0 0;
 }
-.menu-container h3 {
-  font-weight: 400;
-  padding: 0.2rem;
-}
-.menu-container .green-border {
-  width: 50px;
-  height: 3px;
-  background-color: var(--tertiary-1);
-}
 .menu-container .menu-title-content {
   background-color: var(--grey-2);
   position: relative;
@@ -393,12 +384,22 @@ footer ul li i {
 .menu-container .menu-title-content .second-heart:hover {
   opacity: 1;
 }
+.menu-container h3 {
+  font-weight: 400;
+  padding: 0.2rem;
+}
+.menu-container .green-border {
+  width: 50px;
+  height: 3px;
+  background-color: var(--tertiary-1);
+}
 .menu-container .entries, .menu-container .dishes, .menu-container .desserts {
   width: 90%;
   margin: 2rem auto 0;
 }
 .menu-container .entries .card, .menu-container .dishes .card, .menu-container .desserts .card {
   height: 80px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -417,6 +418,9 @@ footer ul li i {
 .menu-container .entries .card .card-content h4, .menu-container .dishes .card .card-content h4, .menu-container .desserts .card .card-content h4 {
   font-size: 1.2rem;
   padding: 0 0 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu-container .entries .card .card-content .card-infos, .menu-container .dishes .card .card-content .card-infos, .menu-container .desserts .card .card-content .card-infos {
   display: inline-flex;
@@ -430,7 +434,46 @@ footer ul li i {
 .menu-container .entries .card .card-content .card-infos strong, .menu-container .dishes .card .card-content .card-infos strong, .menu-container .desserts .card .card-content .card-infos strong {
   margin-right: 1rem;
 }
-.menu-container button {
+.menu-container .entries .card .animate-check, .menu-container .dishes .card .animate-check, .menu-container .desserts .card .animate-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 0;
+  background-color: var(--tertiary-1);
+  border-radius: 0 20px 20px 0;
+}
+.menu-container .entries .card .animate-check .container-check-icon, .menu-container .dishes .card .animate-check .container-check-icon, .menu-container .desserts .card .animate-check .container-check-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 50%;
+  animation: rotateCheckOut 0.2s linear;
+}
+.menu-container .entries .card .animate-check .container-check-icon i, .menu-container .dishes .card .animate-check .container-check-icon i, .menu-container .desserts .card .animate-check .container-check-icon i {
+  color: transparent;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.menu-container .entries .card:hover .animate-check, .menu-container .dishes .card:hover .animate-check, .menu-container .desserts .card:hover .animate-check {
+  height: 80px;
+  width: 5rem;
+  transition: width 0.2s ease-in-out;
+}
+.menu-container .entries .card:hover .animate-check .container-check-icon, .menu-container .dishes .card:hover .animate-check .container-check-icon, .menu-container .desserts .card:hover .animate-check .container-check-icon {
+  background-color: white;
+  animation: rotateCheckIn 0.2s linear;
+}
+.menu-container .entries .card:hover .animate-check .container-check-icon i, .menu-container .dishes .card:hover .animate-check .container-check-icon i, .menu-container .desserts .card:hover .animate-check .container-check-icon i {
+  color: var(--tertiary-1);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.command-btn {
   margin: 2.5rem auto;
   background: var(--linear-gradient);
   color: white;
@@ -441,7 +484,7 @@ footer ul li i {
   font-size: 1rem;
   cursor: pointer;
 }
-.menu-container button:hover {
+.command-btn:hover {
   opacity: 0.8;
 }
 
@@ -456,61 +499,12 @@ footer ul li i {
   .menu-container .container-menu-sections .entries, .menu-container .container-menu-sections .dishes, .menu-container .container-menu-sections .desserts {
     width: 31%;
   }
-  .menu-container .container-menu-sections .entries .card h4, .menu-container .container-menu-sections .dishes .card h4, .menu-container .container-menu-sections .desserts .card h4 {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
 }
-.card .animate-check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 0%;
-  height: 100%;
-  background-color: var(--tertiary-1);
-  border-radius: 0 20px 20px 0;
-}
-.card .animate-check .container-check-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  background-color: transparent;
-  border-radius: 50%;
-}
-.card .animate-check .container-check-icon i {
-  color: transparent;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.card:hover strong {
-  margin-right: 17%;
-}
-.card:hover .animate-check {
-  height: 80px;
-  width: 17%;
-  transition: width 0.2s linear;
-}
-.card:hover .animate-check .container-check-icon {
-  background-color: white;
-  animation: rotateCheck 0.2s linear;
-}
-.card:hover .animate-check .container-check-icon i {
-  color: var(--tertiary-1);
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-@keyframes rotateCheck {
-  0% {
+@keyframes rotateCheckIn {
+  from {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }

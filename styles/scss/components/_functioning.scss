@@ -21,28 +21,28 @@
                 width: 90%;
                 display: inline-flex;
                &:nth-child(1) {
-                    button {
+                    .functioning-btn {
                         &:before {
                             content: "1";
                         }
                     }
                 }
                &:nth-child(2) {
-                    button {
+                    .functioning-btn {
                         &:before {
                             content: "2";
                         }
                     }
                 }
                &:nth-child(3) {
-                    button {
+                    .functioning-btn {
                         &:before {
                             content: "3";
                         }
                     }
                 }
 
-                button {
+                .functioning-btn {
                     position: relative;
                     display: flex;
                     align-items: center;
