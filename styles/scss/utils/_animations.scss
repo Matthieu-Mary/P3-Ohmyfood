@@ -1,15 +1,12 @@
 .card {
         
     .animate-check {
-        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 0%;
         height: 100%;
         background-color: var(--tertiary-1);
-        right: 0;
-        top: 0;
         border-radius: 0 20px 20px 0;
     
         .container-check-icon { 
@@ -29,15 +26,17 @@
         }
     }
     &:hover {
-        strong {
-            margin-right: 4rem;    
+        strong {    
+            margin-right: 17%;
         }
         .animate-check {
+            height: 80px;
             width: 17%;
-            transition: width 0.25s linear;
+            transition: width 0.2s linear;
         
             .container-check-icon { 
                 background-color: white;
+                animation: rotateCheck 0.2s linear;
                 
                 i {
                     color: var(--tertiary-1);
@@ -46,5 +45,17 @@
                 }
             }
         }
+    }
+}
+
+@keyframes rotateCheck {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

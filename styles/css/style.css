@@ -398,30 +398,37 @@ footer ul li i {
   margin: 2rem auto 0;
 }
 .menu-container .entries .card, .menu-container .dishes .card, .menu-container .desserts .card {
-  position: relative;
-  padding: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 1rem;
   background-color: white;
   border-radius: 20px;
   box-shadow: var(--box-shadow);
   margin-top: 1rem;
   cursor: pointer;
 }
-.menu-container .entries .card h4, .menu-container .dishes .card h4, .menu-container .desserts .card h4 {
-  font-size: 1.2rem;
-  padding: 0 0 0.5rem;
-}
 .menu-container .entries .card .card-content, .menu-container .dishes .card .card-content, .menu-container .desserts .card .card-content {
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+.menu-container .entries .card .card-content h4, .menu-container .dishes .card .card-content h4, .menu-container .desserts .card .card-content h4 {
+  font-size: 1.2rem;
+  padding: 0 0 0.5rem;
+}
+.menu-container .entries .card .card-content .card-infos, .menu-container .dishes .card .card-content .card-infos, .menu-container .desserts .card .card-content .card-infos {
+  display: inline-flex;
   justify-content: space-between;
 }
-.menu-container .entries .card .card-content p, .menu-container .dishes .card .card-content p, .menu-container .desserts .card .card-content p {
+.menu-container .entries .card .card-content .card-infos p, .menu-container .dishes .card .card-content .card-infos p, .menu-container .desserts .card .card-content .card-infos p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu-container .entries .card .card-content strong, .menu-container .dishes .card .card-content strong, .menu-container .desserts .card .card-content strong {
-  margin-right: 0.5rem;
+.menu-container .entries .card .card-content .card-infos strong, .menu-container .dishes .card .card-content .card-infos strong, .menu-container .desserts .card .card-content .card-infos strong {
+  margin-right: 1rem;
 }
 .menu-container button {
   margin: 2.5rem auto;
@@ -456,15 +463,12 @@ footer ul li i {
   }
 }
 .card .animate-check {
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 0%;
   height: 100%;
   background-color: var(--tertiary-1);
-  right: 0;
-  top: 0;
   border-radius: 0 20px 20px 0;
 }
 .card .animate-check .container-check-icon {
@@ -482,19 +486,33 @@ footer ul li i {
   font-weight: bold;
 }
 .card:hover strong {
-  margin-right: 4rem;
+  margin-right: 17%;
 }
 .card:hover .animate-check {
+  height: 80px;
   width: 17%;
-  transition: width 0.25s linear;
+  transition: width 0.2s linear;
 }
 .card:hover .animate-check .container-check-icon {
   background-color: white;
+  animation: rotateCheck 0.2s linear;
 }
 .card:hover .animate-check .container-check-icon i {
   color: var(--tertiary-1);
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+@keyframes rotateCheck {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
