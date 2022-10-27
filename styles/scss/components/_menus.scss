@@ -28,15 +28,18 @@
         }
         .first-heart {
             opacity: 1;
-            transition: opacity 200ms linear;
+            transition: opacity 250ms linear;
             &:hover {
                 opacity: 0;
             }
         }
         .second-heart {
             opacity: 0;
-            color: var(--primary-1);
-            transition: opacity 400ms linear;
+            background: var(--linear-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: opacity 250ms linear;
             &:hover {
                 opacity: 1;
             }
@@ -59,7 +62,7 @@
         margin: 2rem auto 0;     
         
         .card {
-            opacity: 1;
+            opacity: inherit;
             overflow: hidden;
             height: 80px;
             width: 100%;
@@ -73,13 +76,12 @@
             margin-top: 1rem;
             cursor: pointer;
             
-    
-            // @for $i from 2 through 7 {
-            //     &:nth-of-type(#{$i}) {
-            //         animation: delayMenus 2s infinite;
-            //         animation-delay: $i * 0.5s;
-            //     }
-            //   }
+            @for $i from 2 through 7 {
+                &:nth-of-type(#{$i}) {
+                    animation: delayMenus 2s;
+                    // animation-delay: $i * 1.25 ;    
+                }
+              }
 
             .card-content {
                 width: 100%;

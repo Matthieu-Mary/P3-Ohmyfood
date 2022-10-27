@@ -259,6 +259,7 @@ header .header-image-container img {
   padding: 0 0 0.2rem;
 }
 .restaurants i {
+  padding: 0;
   position: absolute;
   font-size: 1.5rem;
   right: 6%;
@@ -266,19 +267,21 @@ header .header-image-container img {
 }
 .restaurants .first-heart {
   opacity: 1;
-  transition: opacity 200ms linear;
+  transition: opacity 250ms linear;
 }
 .restaurants .first-heart:hover {
   opacity: 0;
 }
 .restaurants .second-heart {
   opacity: 0;
-  color: var(--secondary-1);
-  transition: opacity 250ms ease-in, transform 250ms ease-in;
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 250ms linear;
 }
 .restaurants .second-heart:hover {
   opacity: 1;
-  transform: scale(1.2);
 }
 
 @media screen and (min-width: 992px) {
@@ -371,15 +374,18 @@ footer ul li i {
 }
 .menu-container .menu-title-content .first-heart {
   opacity: 1;
-  transition: opacity 200ms linear;
+  transition: opacity 250ms linear;
 }
 .menu-container .menu-title-content .first-heart:hover {
   opacity: 0;
 }
 .menu-container .menu-title-content .second-heart {
   opacity: 0;
-  color: var(--primary-1);
-  transition: opacity 400ms linear;
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 250ms linear;
 }
 .menu-container .menu-title-content .second-heart:hover {
   opacity: 1;
@@ -398,7 +404,7 @@ footer ul li i {
   margin: 2rem auto 0;
 }
 .menu-container .entries .card, .menu-container .dishes .card, .menu-container .desserts .card {
-  opacity: 1;
+  opacity: inherit;
   overflow: hidden;
   height: 80px;
   width: 100%;
@@ -411,6 +417,24 @@ footer ul li i {
   box-shadow: var(--box-shadow);
   margin-top: 1rem;
   cursor: pointer;
+}
+.menu-container .entries .card:nth-of-type(2), .menu-container .dishes .card:nth-of-type(2), .menu-container .desserts .card:nth-of-type(2) {
+  animation: delayMenus 2s;
+}
+.menu-container .entries .card:nth-of-type(3), .menu-container .dishes .card:nth-of-type(3), .menu-container .desserts .card:nth-of-type(3) {
+  animation: delayMenus 2s;
+}
+.menu-container .entries .card:nth-of-type(4), .menu-container .dishes .card:nth-of-type(4), .menu-container .desserts .card:nth-of-type(4) {
+  animation: delayMenus 2s;
+}
+.menu-container .entries .card:nth-of-type(5), .menu-container .dishes .card:nth-of-type(5), .menu-container .desserts .card:nth-of-type(5) {
+  animation: delayMenus 2s;
+}
+.menu-container .entries .card:nth-of-type(6), .menu-container .dishes .card:nth-of-type(6), .menu-container .desserts .card:nth-of-type(6) {
+  animation: delayMenus 2s;
+}
+.menu-container .entries .card:nth-of-type(7), .menu-container .dishes .card:nth-of-type(7), .menu-container .desserts .card:nth-of-type(7) {
+  animation: delayMenus 2s;
 }
 .menu-container .entries .card .card-content, .menu-container .dishes .card .card-content, .menu-container .desserts .card .card-content {
   width: 100%;
@@ -529,6 +553,7 @@ footer ul li i {
 }
 @keyframes delayMenus {
   from {
+    opacity: 0;
     margin-top: 3rem;
   }
   to {
