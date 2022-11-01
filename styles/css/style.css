@@ -122,7 +122,7 @@ header .header-image-container img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 32vh;
+  height: 40vh;
 }
 .functioning .functioning-cards-container ul li {
   width: 90%;
