@@ -78,8 +78,7 @@
             
             @for $i from 2 through 7 {
                 &:nth-of-type(#{$i}) {
-                    animation: delayMenus 2s;
-                    // animation-delay: $i * 1.25 ;    
+                    animation: delayMenus 2s;  
                 }
               }
 
@@ -194,7 +193,6 @@
                 width: 31%;
             }   
         }
-    }
-    
+    } 
 
 }
