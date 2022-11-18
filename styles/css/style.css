@@ -418,7 +418,20 @@ footer ul li i {
   box-shadow: var(--box-shadow);
   margin-top: 1rem;
   cursor: pointer;
-  animation: delayMenus 2s;
+  animation: displayMenus 1s;
+  animation-fill-mode: both;
+}
+.menu-container .entries .card:nth-child(3), .menu-container .dishes .card:nth-child(3), .menu-container .desserts .card:nth-child(3) {
+  animation-delay: 600ms;
+}
+.menu-container .entries .card:nth-child(4), .menu-container .dishes .card:nth-child(4), .menu-container .desserts .card:nth-child(4) {
+  animation-delay: 800ms;
+}
+.menu-container .entries .card:nth-child(5), .menu-container .dishes .card:nth-child(5), .menu-container .desserts .card:nth-child(5) {
+  animation-delay: 1000ms;
+}
+.menu-container .entries .card:nth-child(6), .menu-container .dishes .card:nth-child(6), .menu-container .desserts .card:nth-child(6) {
+  animation-delay: 1200ms;
 }
 .menu-container .entries .card .card-content, .menu-container .dishes .card .card-content, .menu-container .desserts .card .card-content {
   width: 100%;
@@ -591,14 +604,14 @@ footer ul li i {
     transform: rotate(360deg);
   }
 }
-@keyframes delayMenus {
+@keyframes displayMenus {
   from {
-    opacity: 0;
     margin-top: 3rem;
+    opacity: 0;
   }
   to {
-    opacity: 1;
     margin-bottom: 0rem;
+    opacity: 1;
   }
 }
 .loader-container {

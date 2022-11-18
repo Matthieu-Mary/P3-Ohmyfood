@@ -59,8 +59,8 @@
 
     .entries, .dishes, .desserts {
         width: 90%;
-        margin: 2rem auto 0;     
-        
+        margin: 2rem auto 0;
+           
         .card {
             opacity: inherit;
             overflow: hidden;
@@ -75,7 +75,16 @@
             box-shadow: var(--box-shadow);
             margin-top: 1rem;
             cursor: pointer;
-            animation: delayMenus 2s;  
+            animation: displayMenus 1s;
+            animation-fill-mode: both;
+            
+            $cardsStartIndex: 3;
+            $cardsLastIndex: 6;
+            @for $i from $cardsStartIndex through $cardsLastIndex {
+                &:nth-child(#{$i}) {      
+                    animation-delay: 200ms * $i;
+                }
+            }
 
             .card-content {
                 width: 100%;
