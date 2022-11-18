@@ -75,12 +75,7 @@
             box-shadow: var(--box-shadow);
             margin-top: 1rem;
             cursor: pointer;
-            
-            @for $i from 2 through 7 {
-                &:nth-of-type(#{$i}) {
-                    animation: delayMenus 2s;  
-                }
-              }
+            animation: delayMenus 2s;  
 
             .card-content {
                 width: 100%;

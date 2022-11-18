@@ -418,23 +418,6 @@ footer ul li i {
   box-shadow: var(--box-shadow);
   margin-top: 1rem;
   cursor: pointer;
-}
-.menu-container .entries .card:nth-of-type(2), .menu-container .dishes .card:nth-of-type(2), .menu-container .desserts .card:nth-of-type(2) {
-  animation: delayMenus 2s;
-}
-.menu-container .entries .card:nth-of-type(3), .menu-container .dishes .card:nth-of-type(3), .menu-container .desserts .card:nth-of-type(3) {
-  animation: delayMenus 2s;
-}
-.menu-container .entries .card:nth-of-type(4), .menu-container .dishes .card:nth-of-type(4), .menu-container .desserts .card:nth-of-type(4) {
-  animation: delayMenus 2s;
-}
-.menu-container .entries .card:nth-of-type(5), .menu-container .dishes .card:nth-of-type(5), .menu-container .desserts .card:nth-of-type(5) {
-  animation: delayMenus 2s;
-}
-.menu-container .entries .card:nth-of-type(6), .menu-container .dishes .card:nth-of-type(6), .menu-container .desserts .card:nth-of-type(6) {
-  animation: delayMenus 2s;
-}
-.menu-container .entries .card:nth-of-type(7), .menu-container .dishes .card:nth-of-type(7), .menu-container .desserts .card:nth-of-type(7) {
   animation: delayMenus 2s;
 }
 .menu-container .entries .card .card-content, .menu-container .dishes .card .card-content, .menu-container .desserts .card .card-content {
